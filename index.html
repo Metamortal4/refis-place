@@ -5,13 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Refi's Place - App</title>
         <link rel="stylesheet" href="style.css" />
-        <script>
-            // Load Items from JSON
-
-            // Use Items to generate list items in HTML
-
-            // Implement Search function
-        </script>
     </head>
     <body>
         <div class="heading">
@@ -27,7 +20,31 @@
         <ul class="item-list">
             <li>
                 <div class="item">
-                    <h3 class="item-name">Item Name</h3>
+                    <h3 class="item-name">Wafflemania</h3>
+                    <h4 class="item-details">Contact, Website</h4>
+                    <p class="item-description">
+                        Wafflemania is a fast food dispenser on the Academic City student Campus.
+                        Food is prepared properly and with haste and is then sold to you at prices you won't see
+                        even in your nightmares. 
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="item">
+                    <h3 class="item-name">Banana Palace</h3>
+                    <h4 class="item-details">Contact, Website</h4>
+                    <p class="item-description">
+                        Banana Palace is an Imaginary Fruit themed Desert Store. It exist only as filler for this
+                        particular project. You cannot get any of the delicious foods here because they are
+                        Imaginary!!
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="item">
+                    <h3 class="item-name">Yellow Bar</h3>
                     <h4 class="item-details">Contact, Website</h4>
                     <p class="item-description">
                         Lorem ipsum dolor sit amet, consectetuer
@@ -40,29 +57,41 @@
 
             <li>
                 <div class="item">
-                    <h3 class="item-name">Item Name</h3>
+                    <h3 class="item-name">Brodohene Quick Foods</h3>
                     <h4 class="item-details">Contact, Website</h4>
                     <p class="item-description">
-                        Lorem ipsum dolor sit amet, consectetuer
-                        adipiscing elit. Maecenas porttitor congue massa. Fusce
-                        posuere, magna sed pulvinar ultricies, purus lectus
-                        malesuada libero, sit amet commodo magna eros quis urna.
-                    </p>
-                </div>
-            </li>
-
-            <li>
-                <div class="item">
-                    <h3 class="item-name">Item Name</h3>
-                    <h4 class="item-details">Contact, Website</h4>
-                    <p class="item-description">
-                        Lorem ipsum dolor sit amet, consectetuer
-                        adipiscing elit. Maecenas porttitor congue massa. Fusce
-                        posuere, magna sed pulvinar ultricies, purus lectus
-                        malesuada libero, sit amet commodo magna eros quis urna.
+                        We do not have the permission to use the actual Brodohene brand in this demo so consider
+                        this to be some imaginary food shop that sells bread. If you also however do not know Brodohene,
+                         find a window on the top floor and Jump...
                     </p>
                 </div>
             </li>
         </ul>
+
+        <script>
+            let srch_btn = document.getElementById('search');
+
+            srch_btn.addEventListener("click", (e) => {
+                // e.preventDefault();
+                search();
+            });
+
+            // Implement Search function
+            function search() {
+                let input = document.getElementById('box').value
+                input = input.toLowerCase();
+                let x = document.getElementsByClassName('item');
+
+                for (i = 0; i < x.length; i++) {
+                    if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display = "none";
+                    }
+                    else {
+                    x[i].style.display = "list-item";
+                    }
+                }
+            }
+
+        </script>
     </body>
 </html>
